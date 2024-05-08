@@ -1,0 +1,80 @@
+
+.allSupplys{
+  margin-bottom: 30px;
+}
+
+.SupplyItems {
+  /* Allgemeine Stile für das umschließende Div */
+  display: flex;
+  border: 2px solid #b3d4fc;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.supply-value {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: white; /* Beispiel für eine Textfarbe */
+}
+.CoinDetailImgStyle {
+  width: 55px;
+  height: 50px;
+  margin-right: 10px;
+  padding-bottom: 20px;
+}
+.DataContainer {
+  width: 100%;
+  height: 500px;
+}
+
+.DataItems{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  height: 500px;
+  font-size: 20px;
+  margin: 25px;
+
+}
+.DataValue {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.MarketDataStyle{
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 60%;
+  border: 5px solid #1f0546;
+  border-radius: 30px;
+}
+
+.MarketDataFlex{
+  height: 500px;
+  margin-bottom: 150px;
+}
+.MarketDataTitle{
+  flex-direction: column;
+  font-size: 25px;
+  p{
+    margin-bottom: 40px;
+  }
+}
+
+.MarketDataValue {
+  flex-direction: column;
+  font-size: 25px;
+  p{
+    margin-bottom: 40px;
+  }
+}
+
