@@ -7,7 +7,7 @@ const Footer = () => {
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [successText, setSuccessText] = useState('')
-    const [showData, setShowData] = useState('')
+    // const [showData, setShowData] = useState('')
 
 
     const isEmailValid = (email) => {
@@ -44,7 +44,7 @@ const Footer = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    setShowData(data)
+                    // setShowData(data)
                     setSuccessText('Thank you for subscribing')
                     setEmail('')
                     setError('')
