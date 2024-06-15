@@ -3,7 +3,6 @@ import "./cryptodatatable.scss"
 import fetch from "node-fetch";
 import {ApiKey, ApiUrl} from "../../database/apiurl";
 import Searchbar from "../Searchbar/searchbar";
-import {Link} from "react-router-dom";
 
 
     const Cryptodatatable = () => {
@@ -36,9 +35,6 @@ import {Link} from "react-router-dom";
                         .then(data => {
                             setGetApi(data)
                             setFilteredCoin(data)
-                            console.log(filteredCoin)
-                            console.log(data)
-
                         })
                         .catch(error => console.log(error))
                 })

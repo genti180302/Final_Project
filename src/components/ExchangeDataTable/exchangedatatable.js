@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import "./exchangedatatable.scss"
 import fetch from "node-fetch";
 import Searchbar from "../Searchbar/searchbar";
-import {Link} from "react-router-dom";
 
 
 

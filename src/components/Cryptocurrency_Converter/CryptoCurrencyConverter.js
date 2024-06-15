@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import fetch from "node-fetch";
-import {ApiKey, ApiUrl} from "../../database/apiurl";
 import './CryptoCurrencyConverter.scss'
 
 const CryptoCurrencyConverter = () => {
-    const [cryptoList, setCryptoList] = useState([]);
+    // const [cryptoList, setCryptoList] = useState([]);
+    const cryptoList = [];
     const [fromCurrency, setFromCurrency] = useState('bitcoin');
     const [toCurrency, setToCurrency] = useState('usd');
     const [amount, setAmount] = useState(1);
