@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
-import '../ExchangeSlide/exchangeslide.scss'
+import '../ExchangeSlide/exchangeslide.scss';
 import fetch from "node-fetch";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,7 @@ const ExchangeSlide = () => {
                 setExchange(data);
             })
             .catch(error => console.log(error));
-    }, [exchangeID]);
+    }, [exchangeID]);  // Include exchangeID in the dependency array
 
     return (
         <>
@@ -35,7 +35,7 @@ const ExchangeSlide = () => {
             <div>
                 {exchange.length > 0 && exchange.map((exchangeData, index) => (
                     <div key={index} className={'ExchangeSlideStyle'}>
-                        {Object.keys(exchangeData.data).map(key => (
+                        {exchangeData.data && Object.keys(exchangeData.data).map(key => (
                             <Link key={exchangeData.data[key].id} className={'Exchange-linkStyle'} to={`/details_/${exchangeData.data[key].id}`}>
                                 <React.Fragment key={exchangeData.data[key].id}>
                                     <div key={exchangeData.data[key].id} className={'ExchangeDetailDesign'}>
@@ -55,6 +55,65 @@ const ExchangeSlide = () => {
 };
 
 export default ExchangeSlide;
+
+
+// import React, { useEffect, useState, useMemo } from "react";
+// import '../ExchangeSlide/exchangeslide.scss'
+// import fetch from "node-fetch";
+// import { Link } from "react-router-dom";
+
+// const ExchangeSlide = () => {
+//     const [exchange, setExchange] = useState([]);
+//     const apiKey = '99beb61c-8840-42bb-b180-eabd3e54fd1e';
+
+//     const exchangeID = useMemo(() => [270, 513, 24, 311, 89], []);  // Memoize exchangeID
+
+//     useEffect(() => {
+//         Promise.all(exchangeID.map(id =>
+//             fetch(`https://pro-api.coinmarketcap.com/v1/exchange/info?id=${id}`, {
+//                 method: 'GET',
+//                 headers: {
+//                     'accept': 'application/json',
+//                     'X-CMC_PRO_API_KEY': apiKey,
+//                 }
+//             })
+//                 .then(response => response.json())
+//         ))
+//             .then(data => {
+//                 console.log(data);
+//                 setExchange(data);
+//             })
+//             .catch(error => console.log(error));
+//     }, [exchangeID]);
+
+//     return (
+//         <>
+//             <div className='HeaderContainer'>
+//                 <h1> Top Exchanges </h1>
+//             </div>
+//             <div>
+//                 {exchange.length > 0 && exchange.map((exchangeData, index) => (
+//                     <div key={index} className={'ExchangeSlideStyle'}>
+//                         {Object.keys(exchangeData.data).map(key => (
+//                             <Link key={exchangeData.data[key].id} className={'Exchange-linkStyle'} to={`/details_/${exchangeData.data[key].id}`}>
+//                                 <React.Fragment key={exchangeData.data[key].id}>
+//                                     <div key={exchangeData.data[key].id} className={'ExchangeDetailDesign'}>
+//                                         <img className='ExchangeSlideImgStyle' src={exchangeData.data[key].logo}
+//                                              alt={exchangeData.data[key].name} />
+//                                         <p>{exchangeData.data[key].name}</p>
+//                                         <p>Visitors: {exchangeData.data[key].weekly_visits}</p>
+//                                     </div>
+//                                 </React.Fragment>
+//                             </Link>
+//                         ))}
+//                     </div>
+//                 ))}
+//             </div>
+//         </>
+//     );
+// };
+
+// export default ExchangeSlide;
 
 
 
